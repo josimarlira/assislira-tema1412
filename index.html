@@ -237,6 +237,18 @@ header.site nav a:hover::after{width:100%}
 .ledger .after{font-size:.88rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--line);padding-top:13px}
 .ledger .pane.fisco .after{border-color:rgba(168,65,47,.3);color:var(--text)}
 
+
+/* CTA colado no resultado: é onde a intenção é maior */
+.calc-cta{display:flex;flex-direction:column;gap:12px;padding:clamp(22px,3.4vw,30px);
+  background:var(--ink);border-top:1px solid var(--line)}
+.calc-cta .go{display:inline-flex;align-items:center;justify-content:center;gap:11px;
+  background:var(--gold-2);color:var(--ink);padding:18px 26px;border-radius:2px;
+  font-size:1rem;font-weight:700;text-decoration:none;text-align:center;
+  transition:background .25s,transform .2s}
+.calc-cta .go:hover{background:var(--gold-soft);transform:translateY(-2px)}
+.calc-cta .sub{font-size:.84rem;color:rgba(255,255,255,.6);text-align:center;line-height:1.5}
+.calc-cta .sub b{color:var(--gold-soft);font-weight:600}
+
 /* ---------- estimator ---------- */
 .calc{
   border:1px solid var(--line-strong);border-radius:3px;background:var(--surface);
@@ -570,8 +582,16 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-s
         <div class="peak">
           <p class="k">Exposição dos últimos 5 anos</p>
           <p class="v num" id="r5">R$ 832.500</p>
-          <p class="note">Valor potencialmente recuperável, sem atualização pela Selic.</p>
+          <p class="note">É o valor em disputa. Sem atualização pela Selic.</p>
         </div>
+      </div>
+
+      <div class="calc-cta">
+        <a class="go" id="calcGo" target="_blank" rel="noopener" href="https://wa.me/5511988232739">
+          Quero conferir esse número na minha empresa
+        </a>
+        <p class="sub">Levamos a sua apuração real e devolvemos o valor apurado.
+        Protocolo até <b>19.08</b>, um dia antes do julgamento.</p>
       </div>
 
       <div class="foot">
@@ -652,7 +672,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-s
     </div>
 
     <div class="fine" style="margin-top:14px">
-      <p><b>A assimetria é o argumento.</b> Em dois dos três cenários, ter a ação protocolada antes do dia 20 faz diferença financeira relevante. No terceiro, não faz diferença nenhuma — a empresa simplesmente encerra a discussão. É por isso que o custo de agir agora é baixo e o custo de esperar é potencialmente o valor inteiro dos últimos cinco anos.</p>
+      <p><b>A assimetria é o argumento.</b> Em dois dos três cenários, ter a ação protocolada antes do dia 20 faz diferença financeira relevante. No terceiro, não faz diferença nenhuma — a empresa simplesmente encerra a discussão. É por isso que o custo de agir agora é baixo e o custo de esperar é o valor inteiro dos últimos cinco anos.</p>
     </div>
   </div>
 </section>
@@ -750,58 +770,10 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-s
     </div>
 
     <div class="cta-wrap">
-      <a class="btn btn-gold" href="https://wa.me/5511988232739?text=Ol%C3%A1%2C%20quero%20avaliar%20a%20tese%20do%20Tema%201.412%20(bonifica%C3%A7%C3%B5es%20e%20PIS%2FCofins)%20para%20a%20minha%20empresa%20antes%20do%20julgamento%20de%2020%2F08." target="_blank" rel="noopener">Solicitar diagnóstico agora</a>
+      <a class="btn btn-gold" href="https://wa.me/5511988232739?text=Ol%C3%A1%2C%20quero%20avaliar%20a%20tese%20do%20Tema%201.412%20(bonifica%C3%A7%C3%B5es%20e%20PIS%2FCofins)%20para%20a%20minha%20empresa%20antes%20do%20julgamento%20de%2020%2F08." target="_blank" rel="noopener">Quero o número da minha empresa</a>
       <a class="btn btn-ghost" href="tel:+551123862386">(11) 2386-2386</a>
     </div>
     <p style="font-size:.86rem;color:var(--inv-muted);max-width:60ch">O diagnóstico é conduzido por advogados do escritório e devolve um número: a exposição apurada da empresa e a recomendação técnica sobre agir ou não agir.</p>
-  </div>
-</section>
-
-<!-- ============ PARCEIROS ============ -->
-<section class="chapter tint">
-  <div class="inner">
-    <p class="eyebrow">Para contadores, consultores e parceiros</p>
-    <hr class="rule">
-    <h2>Você conhece a empresa que precisa ver isso <em>antes de quinta-feira</em>.</h2>
-    <p class="lead" style="margin-top:18px">Contadores, controllers, consultores de varejo e associações comerciais estão em contato diário com quem decide. Uma indicação feita esta semana pode ser a diferença entre um cliente que preserva cinco anos de crédito e um que assiste ao precedente passar.</p>
-
-    <div class="grid g3" style="margin-top:34px">
-      <div class="card">
-        <h3>Análise conjunta</h3>
-        <p>O escritório conduz a leitura jurídica e o parceiro permanece na relação com o cliente. Nada é feito por trás de quem indicou.</p>
-      </div>
-      <div class="card">
-        <h3>Material para levar ao cliente</h3>
-        <p>Esta apresentação foi feita para ser encaminhada. Envie o link, marque a conversa e nós entramos na reunião com você.</p>
-      </div>
-      <div class="card">
-        <h3>Resposta no mesmo dia</h3>
-        <p>Dada a janela até 19 de agosto, indicações recebidas até quarta-feira entram na fila de diagnóstico imediato.</p>
-      </div>
-    </div>
-
-    <div class="cta-wrap">
-      <a class="btn btn-gold" href="https://wa.me/5511988232739?text=Ol%C3%A1%2C%20sou%20parceiro%2Fcontador%20e%20quero%20indicar%20uma%20empresa%20para%20avaliar%20o%20Tema%201.412%20antes%20do%20julgamento%20de%2020%2F08." target="_blank" rel="noopener">Indicar uma empresa</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TRANSPARÊNCIA ============ -->
-<section class="chapter">
-  <div class="inner narrow stack">
-    <div>
-      <p class="eyebrow">O que não prometemos</p>
-      <hr class="rule">
-      <h2>Nenhum escritório sério garante o resultado de um julgamento.</h2>
-    </div>
-    <div class="fine">
-      <p><b>Não há garantia de êxito.</b> O STJ pode fixar tese desfavorável ao contribuinte. A Segunda Turma já decidiu nesse sentido, e essa possibilidade é real.</p>
-      <p><b>Não há garantia de ausência de modulação.</b> Trabalhamos com a hipótese de que ela ocorra porque é o padrão recente, não porque seja certa.</p>
-      <p><b>Nem toda verba tem o mesmo ganho.</b> Na bonificação em mercadoria o ganho é limpo: a Receita não admite crédito sobre o produto recebido de graça, então o tributo cobrado na entrada não tem contrapartida. Já no desconto em dinheiro recebido depois da compra, a empresa tomou crédito sobre a nota cheia — e a Fazenda deve sustentar que, se a verba é redução de custo, o crédito precisa ser reduzido na mesma proporção. Esse ponto ainda está em aberto e pode diminuir o proveito nessa parcela específica.</p>
-      <p><b>Cada empresa tem um caso diferente.</b> A viabilidade depende da natureza contratual das verbas, do regime de apuração e da consistência da escrituração. Há situações em que a recomendação técnica será não ajuizar — e nós diremos isso.</p>
-      <p><b>O que afirmamos é apenas isto:</b> existe uma janela que se fecha em 20 de agosto de 2026, e a decisão de entrar ou não nela deve ser tomada com número na mesa, não no escuro.</p>
-    </div>
-    <p class="muted" style="font-size:.86rem">Conteúdo de caráter informativo, dirigido a empresas e profissionais do setor, nos termos do Código de Ética e Disciplina da OAB. Não constitui oferta de serviços nem promessa de resultado.</p>
   </div>
 </section>
 
@@ -824,7 +796,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-s
         <p>STJ · Tema Repetitivo 1.412<br>REsp 2.221.794 / 2.221.800 / 2.223.143<br>Rel. Min. Afrânio Vilela<br>Leis 10.637/2002 e 10.833/2003, art. 1º, §3º, V, “a”</p>
       </div>
     </div>
-    <p class="legal">© 2026 Assis Lira Advocacia · Todos os direitos reservados · OAB/SP. Material informativo sobre tese em julgamento. Data de julgamento sujeita à pauta oficial do Superior Tribunal de Justiça.</p>
+    <p class="legal">© 2026 Assis Lira Advocacia · Todos os direitos reservados · OAB/SP. Conteúdo informativo sobre tese em julgamento, sem promessa de resultado. A viabilidade depende da análise de cada caso. Data de julgamento sujeita à pauta oficial do Superior Tribunal de Justiça.</p>
   </div>
 </footer>
 
@@ -898,6 +870,15 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-s
     chips.forEach(function(c){
       c.setAttribute("aria-pressed", String(compras === +c.dataset.c));
     });
+
+    var go=document.getElementById("calcGo");
+    if(go){
+      go.href = "https://wa.me/5511988232739?text=" + encodeURIComponent(
+        "Olá. Simulei em bonificacoes.assislira.com.br: compras de " + money(compras) +
+        " por ano, bonificações em " + vP.textContent + " das compras, exposição estimada de " +
+        brl.format(Math.round(ano*5)) + " em 5 anos. Quero validar esse número para a minha empresa " +
+        "antes do julgamento de 20/08.");
+    }
   }
 
   slC.addEventListener("input",function(){ compras = posToVal(+slC.value); render(); });
