@@ -33,28 +33,6 @@
   --pad:clamp(20px,5vw,64px);
   --shadow:0 1px 2px rgba(11,28,51,.05),0 12px 30px -18px rgba(11,28,51,.30);
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#0A1526; --surface:#11223C; --surface-2:#0E1B30;
-    --line:rgba(198,160,90,.20); --line-strong:rgba(198,160,90,.34);
-    --text:#ECE7DC; --muted:#9DA9B7;
-    --gold:#D3B071; --gold-2:#C6A05A; --gold-soft:#E1CDA0;
-    --inv-bg:#050C17; --inv-surface:#102340; --inv-line:rgba(198,160,90,.24);
-    --alert:#DD7359; --alert-soft:#3A1C16;
-    --ok:#6FB394; --ok-soft:#12291F;
-    --shadow:0 1px 2px rgba(0,0,0,.4),0 14px 34px -18px rgba(0,0,0,.7);
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0A1526; --surface:#11223C; --surface-2:#0E1B30;
-  --line:rgba(198,160,90,.20); --line-strong:rgba(198,160,90,.34);
-  --text:#ECE7DC; --muted:#9DA9B7;
-  --gold:#D3B071; --gold-2:#C6A05A; --gold-soft:#E1CDA0;
-  --inv-bg:#050C17; --inv-surface:#102340; --inv-line:rgba(198,160,90,.24);
-  --alert:#DD7359; --alert-soft:#3A1C16;
-  --ok:#6FB394; --ok-soft:#12291F;
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 14px 34px -18px rgba(0,0,0,.7);
-}
 
 *{box-sizing:border-box}
 body{
@@ -126,7 +104,7 @@ p{margin:0;max-width:var(--measure)}
 @media(min-width:901px){:root{--strip:34px;--hdr:70px}}
 
 .bar{
-  position:sticky;top:0;z-index:70;background:var(--ink3);color:var(--gold-soft);
+  position:sticky;top:0;z-index:70;background:var(--ink-2);color:var(--gold-soft);
   height:var(--strip);
   display:flex;align-items:center;justify-content:center;gap:9px;
   padding:0 14px;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
@@ -141,31 +119,8 @@ p{margin:0;max-width:var(--measure)}
 @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(168,65,47,0)}100%{box-shadow:0 0 0 0 rgba(168,65,47,0)}}
 
 
-/* o logo tem duas versões: navy para fundo claro, branca para fundo escuro */
-.only-light{display:block}
-.only-dark{display:none}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) .only-light{display:none}
-  :root:not([data-theme="light"]) .only-dark{display:block}
-}
-:root[data-theme="dark"] .only-light{display:none}
-:root[data-theme="dark"] .only-dark{display:block}
 
 
-/* alternador de tema — permite travar claro ou escuro via ?tema=claro|escuro */
-.theme-btn{margin-left:auto;width:40px;height:40px;flex:none;display:flex;align-items:center;
-  justify-content:center;background:none;border:1px solid var(--line);border-radius:2px;
-  color:var(--muted);cursor:pointer;transition:border-color .25s,color .25s}
-.theme-btn:hover{border-color:var(--gold);color:var(--gold)}
-.theme-btn svg{width:17px;height:17px}
-.theme-btn .ico-dark{display:none}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) .theme-btn .ico-light{display:none}
-  :root:not([data-theme="light"]) .theme-btn .ico-dark{display:block}
-}
-:root[data-theme="dark"] .theme-btn .ico-light{display:none}
-:root[data-theme="dark"] .theme-btn .ico-dark{display:block}
-@media(min-width:901px){.theme-btn{margin-left:0}}
 
 header.site{
   position:sticky;top:var(--strip);z-index:65;height:var(--hdr);
@@ -453,8 +408,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-s
 <header class="site">
   <div class="row">
     <a href="https://assislira.com.br/" target="_blank" rel="noopener" aria-label="Assis Lira Advocacia — página inicial">
-      <img class="mark only-light" src="https://assislira.com.br/wp-content/uploads/2024/02/Logotipo-transaparente-1.png" alt="Assis Lira Advocacia">
-      <img class="mark only-dark" src="https://assislira.com.br/wp-content/uploads/2024/02/Logotipo-transaparente2.png" alt="" aria-hidden="true">
+      <img class="mark" src="https://assislira.com.br/wp-content/uploads/2024/02/Logotipo-transaparente-1.png" alt="Assis Lira Advocacia">
     </a>
     <nav aria-label="Navegação do escritório">
       <ul>
@@ -466,10 +420,6 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-s
       </ul>
     </nav>
     <a class="nav-cta" href="https://assislira.com.br/contato/" target="_blank" rel="noopener">Solicitar análise</a>
-    <button class="theme-btn" id="themeBtn" type="button" aria-label="Alternar entre tema claro e escuro" title="Alternar tema claro/escuro">
-      <svg class="ico-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-      <svg class="ico-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
-    </button>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
       <span></span><span></span><span></span>
     </button>
@@ -962,17 +912,6 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-s
   slC.value = valToPos(compras);
   render();
 
-
-  /* ---------- tema: ?tema=claro|escuro trava, botão alterna ---------- */
-  var root=document.documentElement;
-  var forced=new URLSearchParams(location.search).get("tema");
-  if(forced==="claro"||forced==="light") root.setAttribute("data-theme","light");
-  if(forced==="escuro"||forced==="dark")  root.setAttribute("data-theme","dark");
-  document.getElementById("themeBtn").addEventListener("click",function(){
-    var cur=root.getAttribute("data-theme");
-    if(!cur) cur = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    root.setAttribute("data-theme", cur==="dark" ? "light" : "dark");
-  });
 
   /* ---------- menu mobile ---------- */
   var tg=document.getElementById("navToggle"),dw=document.getElementById("drawer"),
